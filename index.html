@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="eng" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Homologacion odontologia</title>
+        <script type="text/javascript">
+            function didIPass() {
+                let passed = 5 + ((((100*((document.getElementById("correct").value-(document.getElementById("wrong").value*0.25))/30)-70)*(5/(100-70)))));
+                document.getElementById("passed").style = passed >= 5 ? "font-size: 40px; color: green" : "font-size: 40px; color: red";
+                document.getElementById("passed").innerHTML = passed >= 5 ? "Aprobado!" : "Reprobado";
+                document.getElementById("final").innerHTML = passed;
+            }
+        </script>
+    </head>
+    <body>
+        <div style="height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;" id="container">
+            <div style="margin-bottom: 2rem;">
+                <label style="font-size: 25px;" for="correct"> Preguntas correctas: </label> <br>
+                <input style="height: 30px; font-size: 15px; border-radius: 2px;" type="number" id="correct"><br>
+            </div>
+            <div>
+                <label style="font-size: 25px;" for="wrong"> Preguntas erroneas: </label> <br>
+                <input style="height: 30px; font-size: 15px; border-radius: 2px;" type="number" id="wrong"><br> <br>
+            </div>
+            <button style="height: 50px;
+                width: 120px;
+                font-size: 25px;" onclick="didIPass()">Aprobe?</button>
+            <br>
+            <h1>Puntuacion Final</h1>
+            <p style="font-size: 30px;" id="final"></p>
+            <p id="passed"></p>
+        </div>
+    </body>
+</html>
